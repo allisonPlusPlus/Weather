@@ -13,3 +13,8 @@ if ("geolocation" in navigator){ //check geolocation available
 }else{
     console.log("Browser doesn't support geolocation!");
 }
+
+ $.get("https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/37.8267,-122.4233", function (response) {
+   $("#degrees").html(response.latitude);
+   $("#weathertype").html(response.longitude);
+ }, "jsonp");
