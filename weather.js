@@ -15,6 +15,6 @@ if ("geolocation" in navigator){ //check geolocation available
 }
 
  $.get("https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/37.8267,-122.4233", function (response) {
-   $("#degrees").html(response.latitude);
+   $("#degrees").html(response.currently.temperature);
    $("#weathertype").html(response.longitude);
  }, "jsonp");
