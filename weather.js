@@ -10,8 +10,9 @@ if ("geolocation" in navigator){ //check geolocation available
     navigator.geolocation.getCurrentPosition(function(position){
       var lat = position.coords.latitude;
       var long = position.coords.longitude;
+      var URL = "https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/" + lat + "," + long;
             console.log("Found your location \nLat : "+position.coords.latitude+" \nLang :"+ position.coords.longitude);
-             $.get("https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/37.8267,-122.4233", function (response) {
+             $.get(URL, function (response) {
                $("#degrees").html(response.currently.temperature);
                $("#weathersummary").html(response.currently.summary);
              }, "jsonp");
