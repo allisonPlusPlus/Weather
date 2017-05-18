@@ -4,6 +4,7 @@ $.get("https://ipinfo.io", function (response) {
     $("#details").html(JSON.stringify(response, null, 4));
 }, "jsonp");
 
+function getWeather() {
 
 if ("geolocation" in navigator){ //check geolocation available
     //try to get user current location using getCurrentPosition() method
@@ -18,3 +19,6 @@ if ("geolocation" in navigator){ //check geolocation available
    $("#degrees").html(response.currently.temperature);
    $("#weathersummary").html(response.currently.summary);
  }, "jsonp");
+}
+
+getWeather();
