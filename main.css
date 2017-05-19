@@ -7,3 +7,10 @@
 .hidden {
    display: none;
 }
+
+.weathersummary {
+  font-size: 40px;
+}
+.degrees {
+  font-size: 40px;
+}
