@@ -24,8 +24,6 @@
 <script src="weather.js"></script>
 
 <!-- Icons -->
-<script src="https://use.fontawesome.com/5251536e6a.js"></script>
-
 <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
 
 <!-- <script src="skycons.js"></script> -->
@@ -75,20 +73,6 @@
           <canvas id="fog" width="64" height="64">
           </canvas>
         </figure>
-        <script>
-      var icons = new Skycons(),
-          list  = [
-            "clear-day", "clear-night", "partly-cloudy-day",
-            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-            "fog"
-          ],
-          i;
-
-      for(i = list.length; i--; )
-        icons.set(list[i], list[i]);
-
-      icons.play();
-    </script>
 <h2 id="weathersummary">Weather Type</h2>
 <h3 class="degrees" id="degrees">00</h3>
 <h4 class="degreeType" id="degreeType">F/C</h4>
@@ -96,6 +80,19 @@
 </div>
 </div>
 </div>
+<script>
+var icons = new Skycons(),
+  list  = [
+    "clear-day", "clear-night", "partly-cloudy-day",
+    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+    "fog"
+  ],
+  i;
 
+for(i = list.length; i--; )
+icons.set(list[i], list[i]);
+
+icons.play();
+</script>
   </body>
 </html>
