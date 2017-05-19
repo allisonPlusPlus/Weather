@@ -15,6 +15,13 @@ if ("geolocation" in navigator){ //check geolocation available
              $.get(URL, function (response) {
                $("#degrees").html(response.currently.temperature);
                $("#weathersummary").html(response.currently.summary);
+              var icon = (response.currently.icon);
+             if (icon === "clear-day") {
+               $("#icons").replaceWith("<figure class='icons' id='icons'> <canvas id='clear-day' width='64' height='64' > </canvas>");
+
+             }
+
+
              }, "jsonp");
         });
 }else{
