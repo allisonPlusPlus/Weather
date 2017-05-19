@@ -17,11 +17,35 @@ if ("geolocation" in navigator){ //check geolocation available
                $("#weathersummary").html(response.currently.summary);
               var icon = (response.currently.icon);
              if (icon === "clear-day") {
-               $("#icons").replaceWith("<figure class='icons' id='icons'> <canvas id='clear-day' width='64' height='64' > </canvas>");
-
+               $("#clear-day").removeClass("hidden");
              }
-
-
+             else if (icon === "clear-night") {
+               $("#clear-night").removeClass("hidden");
+             }
+             else if (icon === "partly-cloudy-day") {
+               $("#partly-cloudy-day").removeClass("hidden");
+             }
+             else if (icon === "partly-cloudy-night") {
+               $("#partly-cloudy-night").removeClass("hidden");
+             }
+             else if (icon === "cloudy") {
+               $("#cloudy").removeClass("hidden");
+             }
+             else if (icon === "rain") {
+               $("#rain").removeClass("hidden");
+             }
+             else if (icon === "sleet") {
+               $("#sleet").removeClass("hidden");
+             }
+             else if (icon === "snow") {
+               $("#snow").removeClass("hidden");
+             }
+             else if (icon === "wind") {
+               $("#wind").removeClass("hidden");
+             }
+             else if (icon === "fog") {
+               $("#fog").removeClass("hidden");
+             }
              }, "jsonp");
         });
 }else{
