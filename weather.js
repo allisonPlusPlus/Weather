@@ -1,7 +1,5 @@
 $.get("https://ipinfo.io", function (response) {
-    $("#ip").html("IP: " + response.ip);
-    $("#address").html(response.city);
-    $("#details").html(JSON.stringify(response, null, 4));
+    $("#address").html(response.city);    
 }, "jsonp");
 
 function getWeather() {
