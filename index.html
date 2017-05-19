@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-<!-- Main CSS -->
-<link rel="stylesheet" type="text/css" href="main.css">
+<head>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Weather JS -->
-<script src="weather.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<!-- Icons -->
-<script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
+    <!-- Weather JS -->
+    <script src="weather.js"></script>
 
-<!-- <script src="skycons.js"></script> -->
+    <!-- Icons -->
+    <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
+
+    <!-- <script src="skycons.js"></script> -->
 
 
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Your Local Weather</title>
-  </head>
+</head>
+
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12">
-<h1 class="text-center">The current weather in <span class="location" id="address">...</span> is</h1>
-</div>
-</div>
-<div class="row text-center">
-  <div class="col-lg-12">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">The current weather in <span class="location" id="address">...</span> is</h1>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
 
-        <figure class="icons">
-          <canvas id="clear-day" width="64" height="64">
+                <figure class="icons">
+                    <canvas id="clear-day" width="64" height="64">
           </canvas>
 
-          <canvas id="clear-night" width="64" height="64">
+                    <canvas id="clear-night" width="64" height="64">
           </canvas>
 
-          <canvas id="partly-cloudy-day" width="64" height="64">
+                    <canvas id="partly-cloudy-day" width="64" height="64">
           </canvas>
 
-          <canvas id="partly-cloudy-night" width="64" height="64">
+                    <canvas id="partly-cloudy-night" width="64" height="64">
           </canvas>
 
-          <canvas id="cloudy" width="64" height="64">
+                    <canvas id="cloudy" width="64" height="64">
           </canvas>
 
-          <canvas id="rain" width="64" height="64">
+                    <canvas id="rain" width="64" height="64">
           </canvas>
 
-          <canvas id="sleet" width="64" height="64">
+                    <canvas id="sleet" width="64" height="64">
           </canvas>
 
-          <canvas id="snow" width="64" height="64">
+                    <canvas id="snow" width="64" height="64">
           </canvas>
 
-          <canvas id="wind" width="64" height="64">
+                    <canvas id="wind" width="64" height="64">
           </canvas>
 
-          <canvas id="fog" width="64" height="64">
+                    <canvas id="fog" width="64" height="64">
           </canvas>
-        </figure>
-<h2 id="weathersummary">Weather Type</h2>
-<h3 class="degrees" id="degrees">00</h3>
-<h4 class="degreeType" id="degreeType">F/C</h4>
-<a href="https://darksky.net/poweredby">Powered by Dark Sky</a>
-</div>
-</div>
-</div>
-<script>
-var icons = new Skycons(),
-  list  = [
-    "clear-day", "clear-night", "partly-cloudy-day",
-    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-    "fog"
-  ],
-  i;
+                </figure>
+                <h2 id="weathersummary">Weather Type</h2>
+                <h3 class="degrees" id="degrees">00</h3>
+                <h4 class="degreeType" id="degreeType">F/C</h4>
+                <a href="https://darksky.net/poweredby">Powered by Dark Sky</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var icons = new Skycons(),
+            list = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+            ],
+            i;
 
-for(i = list.length; i--; )
-icons.set(list[i], list[i]);
+        for (i = list.length; i--;)
+            icons.set(list[i], list[i]);
 
-icons.play();
-</script>
-  </body>
+        icons.play();
+    </script>
+</body>
+
 </html>
