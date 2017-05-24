@@ -3,12 +3,11 @@ $.get("https://ipinfo.io", function(response) {
 }, "jsonp");
 
 function getWeather() {
-    if ("geolocation" in navigator) { 
+    if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var lat = position.coords.latitude;
             var long = position.coords.longitude;
             var URL = "https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/" + lat + "," + long;
-            console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
             $.get(URL, function(response) {
                 var temp = Math.floor(response.currently.temperature);
                 $("#degrees").html(temp);
