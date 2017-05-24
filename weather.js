@@ -1,5 +1,5 @@
 $.get("https://ipinfo.io", function (response) {
-    $("#address").html(response.city);    
+    $("#address").html(response.city);
 }, "jsonp");
 
 function getWeather() {
@@ -11,7 +11,11 @@ if ("geolocation" in navigator){ //check geolocation available
       var URL = "https://api.darksky.net/forecast/9374c70872b17665a8bb166f1d503135/" + lat + "," + long;
             console.log("Found your location \nLat : "+position.coords.latitude+" \nLang :"+ position.coords.longitude);
              $.get(URL, function (response) {
-               $("#degrees").html(response.currently.temperature);
+               var temp = response.currently.temperature;
+               $("#degrees").html(temp);
+
+
+
                $("#weathersummary").html(response.currently.summary);
               var icon = (response.currently.icon);
              if (icon === "clear-day") {
