@@ -3,8 +3,7 @@ $.get("https://ipinfo.io", function(response) {
 }, "jsonp");
 
 function getWeather() {
-    if ("geolocation" in navigator) { //check geolocation available
-        //try to get user current location using getCurrentPosition() method
+    if ("geolocation" in navigator) { 
         navigator.geolocation.getCurrentPosition(function(position) {
             var lat = position.coords.latitude;
             var long = position.coords.longitude;
@@ -13,7 +12,6 @@ function getWeather() {
             $.get(URL, function(response) {
                 var temp = Math.floor(response.currently.temperature);
                 $("#degrees").html(temp);
-
                 $("#degrees").click(function() {
                     var cels = Math.round((temp - 32) * 5 / 9);
                     $(this).html(cels);
